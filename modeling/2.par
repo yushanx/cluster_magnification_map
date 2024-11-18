@@ -1,0 +1,68 @@
+runmode
+	reference 3 0 0
+	mass 3 1000 0.3026 mass.fits
+	image 1 1clump_gal.cat
+	inverse 3 0.1
+	end
+
+grille
+	number 128
+	polarie 0
+	nlens 102
+	nlens_opt 1
+	end
+
+image
+	multfile 1 1clump_gal.cat
+	forme -1
+	sigposArcsec 0.1
+	end
+
+potential 01
+	profile 12
+	x_centre 0.0
+	y_centre 0.0
+	ellipticite 0.1765
+	angle_pos 15.0
+	scale_radius_kpc 500.0
+	v_disp 1500.0
+	z_lens 0.3026
+	end
+
+limit 01
+	x_centre 1 -6.0 6.0 0.1
+	y_centre 1 -6.0 6.0 0.1
+	scale_radius_kpc 1 100.0 2000.0 0.1
+	v_disp 1 100.0 3000.0
+	end
+
+potfile
+	filein 3 galcat.cat
+	zlens 0.3026
+	type 81
+	corekpc 1.0
+	mag0 20.0
+	sigma 1 150.0 250.0
+	cutkpc 1 1.0 30.0
+	slope 0 3.125
+	vdslope 0 3.57
+	end
+
+cline
+	nplan 1 2.0
+	limitLow 1.0
+	limitHigh 1.0
+	end
+
+cosmology
+	H0 70.0
+	omegaM 0.3
+	omegaX 0.7
+	wX -1.0
+	end
+
+field
+	dmax 90.0
+	end
+
+fini
